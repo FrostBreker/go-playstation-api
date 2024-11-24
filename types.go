@@ -95,19 +95,59 @@ type UserGamesResponse struct {
 		Service           string `json:"service"`
 		PlayCount         int    `json:"playCount"`
 		Concept           struct {
-			ID            int    `json:"id"`
-			TitleIds      string `json:"titleIds"`
-			Name          string `json:"name"`
-			Media         string `json:"media"`
-			Genres        string `json:"genres"`
-			LocalizedName string `json:"localizedName"`
-			Country       string `json:"country"`
-			Language      string `json:"language"`
+			ID       int      `json:"id"`
+			TitleIds []string `json:"titleIds"`
+			Name     string   `json:"name"`
+			Media    struct {
+				Audios []interface{} `json:"audios"`
+				Videos []interface{} `json:"videos"`
+				Images []struct {
+					URL    string `json:"url"`
+					Format string `json:"format"`
+					Type   string `json:"type"`
+				} `json:"images"`
+			} `json:"media"`
+			Genres        []string `json:"genres"`
+			LocalizedName struct {
+				DefaultLanguage string `json:"defaultLanguage"`
+				Metadata        struct {
+					FiFI   string `json:"fi-FI"`
+					UkUA   string `json:"uk-UA"`
+					DeDE   string `json:"de-DE"`
+					EnUS   string `json:"en-US"`
+					KoKR   string `json:"ko-KR"`
+					PtBR   string `json:"pt-BR"`
+					EsES   string `json:"es-ES"`
+					ArAE   string `json:"ar-AE"`
+					NoNO   string `json:"no-NO"`
+					FrCA   string `json:"fr-CA"`
+					ItIT   string `json:"it-IT"`
+					PlPL   string `json:"pl-PL"`
+					RuRU   string `json:"ru-RU"`
+					ZhHans string `json:"zh-Hans"`
+					NlNL   string `json:"nl-NL"`
+					PtPT   string `json:"pt-PT"`
+					ZhHant string `json:"zh-Hant"`
+					SvSE   string `json:"sv-SE"`
+					DaDK   string `json:"da-DK"`
+					TrTR   string `json:"tr-TR"`
+					FrFR   string `json:"fr-FR"`
+					EnGB   string `json:"en-GB"`
+					Es419  string `json:"es-419"`
+					JaJP   string `json:"ja-JP"`
+				} `json:"metadata"`
+			} `json:"localizedName"`
+			Country  string `json:"country"`
+			Language string `json:"language"`
 		} `json:"concept"`
 		Media struct {
-			Audios string `json:"audios"`
-			Videos string `json:"videos"`
-			Images string `json:"images"`
+			Audios []interface{} `json:"audios"`
+			Videos []interface{} `json:"videos"`
+			Images []struct {
+				URL    string `json:"url"`
+				Format string `json:"format"`
+				Type   string `json:"type"`
+			} `json:"images"`
 		} `json:"media"`
 		FirstPlayedDateTime time.Time `json:"firstPlayedDateTime"`
 		LastPlayedDateTime  time.Time `json:"lastPlayedDateTime"`
