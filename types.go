@@ -65,8 +65,13 @@ type UserAccountResponse struct {
 type UserProfileResponse struct {
 	OnlineID       string `json:"onlineId"`
 	PersonalDetail struct {
-		FirstName string `json:"firstName"`
-		LastName  string `json:"lastName"`
+		FirstName       string `json:"firstName"`
+		LastName        string `json:"lastName"`
+		DisplayName     string `json:"displayName"`
+		ProfilePictures []struct {
+			Size string `json:"size"`
+			URL  string `json:"url"`
+		} `json:"profilePictures"`
 	} `json:"personalDetail"`
 	AboutMe string `json:"aboutMe"`
 	Avatars []struct {
