@@ -1,7 +1,7 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/FrostBreker/go-playstation-api.svg)](https://pkg.go.dev/github.com/FrostBreker/go-playstation-api)
 # go-playstation-api
 
-This is a simple API that allows you to interact with the PlayStation API.
+This package provides a simple way to interact with PlayStation's API. It includes methods to fetch user information and games.
 
 ## Read First
 Corresponding to my research how PSN works you need npsso to interact with Sony servers.
